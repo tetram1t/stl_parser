@@ -1,0 +1,1349 @@
+NETWORK
+TITLE = Stress Network 1
+
+N1_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N1_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N1_STOP
+CALL FB100
+
+N1_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N1_LOOP
+
+N1_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 2
+
+N2_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N2_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N2_STOP
+CALL FB100
+
+N2_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N2_LOOP
+
+N2_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 3
+
+N3_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N3_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N3_STOP
+CALL FB100
+
+N3_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N3_LOOP
+
+N3_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 4
+
+N4_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N4_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N4_STOP
+CALL FB100
+
+N4_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N4_LOOP
+
+N4_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 5
+
+N5_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N5_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N5_STOP
+CALL FB100
+
+N5_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N5_LOOP
+
+N5_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 6
+
+N6_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N6_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N6_STOP
+CALL FB100
+
+N6_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N6_LOOP
+
+N6_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 7
+
+N7_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N7_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N7_STOP
+CALL FB100
+
+N7_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N7_LOOP
+
+N7_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 8
+
+N8_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N8_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N8_STOP
+CALL FB100
+
+N8_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N8_LOOP
+
+N8_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 9
+
+N9_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N9_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N9_STOP
+CALL FB100
+
+N9_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N9_LOOP
+
+N9_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 10
+
+N10_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N10_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N10_STOP
+CALL FB100
+
+N10_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N10_LOOP
+
+N10_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 11
+
+N11_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N11_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N11_STOP
+CALL FB100
+
+N11_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N11_LOOP
+
+N11_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 12
+
+N12_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N12_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N12_STOP
+CALL FB100
+
+N12_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N12_LOOP
+
+N12_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 13
+
+N13_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N13_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N13_STOP
+CALL FB100
+
+N13_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N13_LOOP
+
+N13_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 14
+
+N14_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N14_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N14_STOP
+CALL FB100
+
+N14_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N14_LOOP
+
+N14_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 15
+
+N15_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N15_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N15_STOP
+CALL FB100
+
+N15_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N15_LOOP
+
+N15_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 16
+
+N16_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N16_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N16_STOP
+CALL FB100
+
+N16_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N16_LOOP
+
+N16_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 17
+
+N17_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N17_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N17_STOP
+CALL FB100
+
+N17_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N17_LOOP
+
+N17_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 18
+
+N18_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N18_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N18_STOP
+CALL FB100
+
+N18_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N18_LOOP
+
+N18_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 19
+
+N19_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N19_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N19_STOP
+CALL FB100
+
+N19_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N19_LOOP
+
+N19_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 20
+
+N20_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N20_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N20_STOP
+CALL FB100
+
+N20_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N20_LOOP
+
+N20_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 21
+
+N21_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N21_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N21_STOP
+CALL FB100
+
+N21_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N21_LOOP
+
+N21_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 22
+
+N22_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N22_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N22_STOP
+CALL FB100
+
+N22_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N22_LOOP
+
+N22_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 23
+
+N23_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N23_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N23_STOP
+CALL FB100
+
+N23_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N23_LOOP
+
+N23_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 24
+
+N24_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N24_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N24_STOP
+CALL FB100
+
+N24_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N24_LOOP
+
+N24_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 25
+
+N25_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N25_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N25_STOP
+CALL FB100
+
+N25_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N25_LOOP
+
+N25_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 26
+
+N26_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N26_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N26_STOP
+CALL FB100
+
+N26_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N26_LOOP
+
+N26_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 27
+
+N27_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N27_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N27_STOP
+CALL FB100
+
+N27_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N27_LOOP
+
+N27_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 28
+
+N28_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N28_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N28_STOP
+CALL FB100
+
+N28_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N28_LOOP
+
+N28_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 29
+
+N29_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N29_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N29_STOP
+CALL FB100
+
+N29_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N29_LOOP
+
+N29_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 30
+
+N30_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N30_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N30_STOP
+CALL FB100
+
+N30_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N30_LOOP
+
+N30_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 31
+
+N31_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N31_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N31_STOP
+CALL FB100
+
+N31_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N31_LOOP
+
+N31_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 32
+
+N32_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N32_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N32_STOP
+CALL FB100
+
+N32_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N32_LOOP
+
+N32_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 33
+
+N33_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N33_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N33_STOP
+CALL FB100
+
+N33_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N33_LOOP
+
+N33_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 34
+
+N34_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N34_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N34_STOP
+CALL FB100
+
+N34_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N34_LOOP
+
+N34_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 35
+
+N35_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N35_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N35_STOP
+CALL FB100
+
+N35_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N35_LOOP
+
+N35_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 36
+
+N36_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N36_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N36_STOP
+CALL FB100
+
+N36_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N36_LOOP
+
+N36_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 37
+
+N37_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N37_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N37_STOP
+CALL FB100
+
+N37_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N37_LOOP
+
+N37_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 38
+
+N38_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N38_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N38_STOP
+CALL FB100
+
+N38_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N38_LOOP
+
+N38_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 39
+
+N39_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N39_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N39_STOP
+CALL FB100
+
+N39_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N39_LOOP
+
+N39_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 40
+
+N40_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N40_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N40_STOP
+CALL FB100
+
+N40_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N40_LOOP
+
+N40_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 41
+
+N41_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N41_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N41_STOP
+CALL FB100
+
+N41_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N41_LOOP
+
+N41_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 42
+
+N42_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N42_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N42_STOP
+CALL FB100
+
+N42_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N42_LOOP
+
+N42_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 43
+
+N43_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N43_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N43_STOP
+CALL FB100
+
+N43_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N43_LOOP
+
+N43_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 44
+
+N44_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N44_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N44_STOP
+CALL FB100
+
+N44_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N44_LOOP
+
+N44_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 45
+
+N45_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N45_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N45_STOP
+CALL FB100
+
+N45_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N45_LOOP
+
+N45_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 46
+
+N46_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N46_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N46_STOP
+CALL FB100
+
+N46_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N46_LOOP
+
+N46_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 47
+
+N47_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N47_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N47_STOP
+CALL FB100
+
+N47_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N47_LOOP
+
+N47_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 48
+
+N48_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N48_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N48_STOP
+CALL FB100
+
+N48_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N48_LOOP
+
+N48_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 49
+
+N49_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N49_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N49_STOP
+CALL FB100
+
+N49_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N49_LOOP
+
+N49_STOP : R "MotorEnable"
+
+NETWORK
+TITLE = Stress Network 50
+
+N50_START : NOP 0
+A     "Sensor_1"
+AN    "Fault"
+JC    N50_STOP
+L     DB10.DBW0
+L     1
++I
+T     DB10.DBW0
+A(
+A     "Sensor_2"
+O     "Sensor_3"
+)
+JC    N50_STOP
+CALL FB100
+
+N50_LOOP : NOP 0
+L     MW100
+L     1
++I
+T     MW100
+JU    N50_LOOP
+
+N50_STOP : R "MotorEnable"
