@@ -1,4 +1,5 @@
 import re
+from expression_parser import build_expression
 
 def parse_stl_mvp(code: str) -> dict:
     if not code:
