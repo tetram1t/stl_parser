@@ -18,7 +18,7 @@ def parse_stl_mvp(code: str) -> dict:
     warnings = []
 
     pattern = re.compile(
-        r'^\s*(?:(\w+)\s*:\s*)?([A-Za-z0-9_<>+\-]+|\w+\(|\))?(\s+.*)?$'
+        r'^\s*(?:(\w+)\s*:\s*)?([^\s]+)?(\s+.*)?$'
     )
 
     for idx, line in enumerate(lines):
