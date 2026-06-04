@@ -1,13 +1,4 @@
 def build_basic_blocks(parsed):
-    """
-    Build classic compiler-style basic blocks.
-
-    Block leaders:
-    1. First instruction
-    2. Jump targets
-    3. Instruction after conditional branch
-    """
-
     instructions = parsed["instructions"]
 
     if not instructions:
@@ -15,46 +6,70 @@ def build_basic_blocks(parsed):
 
     leaders = {0}
 
-    # Jump targets only
+    # jump targets
     for edge in parsed["cfg_edges"]:
-
-        if edge["kind"] not in (
-            "jump",
-            "branch_true",
-        ):
-            continue
-
         target = edge["resolved_target_id"]
-
         if target is not None:
             leaders.add(target)
 
-    # Instruction after conditional branch
+    # instruction after conditional jump
     for inst in instructions:
-
         if inst["opcode"] == "JC":
-
-            next_id = inst["id"] + 1
-
-            if next_id < len(instructions):
-                leaders.add(next_id)
+            if inst["id"] + 1 < len(instructions):
+                leaders.add(inst["id"] + 1)
 
     leaders = sorted(leaders)
 
     blocks = []
 
-    for idx, start in enumerate(leaders):
-
-        if idx + 1 < len(leaders):
-            end = leaders[idx + 1]
-        else:
-            end = len(instructions)
+    for i, start in enumerate(leaders):
+        end = leaders[i + 1] if i + 1 < len(leaders) else len(instructions)
 
         blocks.append({
-            "id": idx,
+            "id": len(blocks),
             "start": start,
             "end": end - 1,
             "instructions": instructions[start:end]
         })
 
     return blocks
+
+
+def build_block_cfg(blocks, parsed):
+    edges = []
+
+    instruction_to_block = {}
+
+    for block in blocks:
+        for inst in block["instructions"]:
+            instruction_to_block[inst["id"]] = block["id"]
+
+    seen = set()
+
+    for edge in parsed["cfg_edges"]:
+        src_inst = edge["from"]
+        dst_inst = edge["resolved_target_id"]
+
+        if dst_inst is None:
+            continue
+
+        src_block = instruction_to_block.get(src_inst)
+        dst_block = instruction_to_block.get(dst_inst)
+
+        if src_block is None or dst_block is None:
+            continue
+
+        key = (src_block, dst_block, edge["kind"])
+
+        if key in seen:
+            continue
+
+        seen.add(key)
+
+        edges.append({
+            "from_block": src_block,
+            "to_block": dst_block,
+            "kind": edge["kind"]
+        })
+
+    return edges

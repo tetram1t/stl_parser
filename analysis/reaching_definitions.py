@@ -1,34 +1,85 @@
-def build_reaching_definitions(instructions):
+def build_reaching_definitions(instructions, cfg_edges=None):
     """
-    Simple reaching definitions analysis.
-
-    Tracks the latest definition of each variable and
-    connects later uses to that definition.
+    Returns FLAT reaching definitions format for tests.
     """
 
-    last_definition = {}
-    reaching = []
+    if not instructions:
+        return []
+
+    # ---- CFG predecessors ----
+    preds = {i["id"]: [] for i in instructions}
+
+    if cfg_edges:
+        for e in cfg_edges:
+            dst = e.get("resolved_target_id")
+            if dst is not None:
+                preds[dst].append(e["from"])
+    else:
+        for i in range(1, len(instructions)):
+            preds[i].append(i - 1)
+
+    # ---- collect defs ----
+    var_defs = {}
 
     for inst in instructions:
+        if inst["opcode"] in ["T", "=", "S", "R"]:
+            var = inst.get("operand")
+            if var:
+                var_defs.setdefault(var, []).append(inst["id"])
 
-        opcode = inst["opcode"]
-        operand = inst["operand"]
+    # ---- GEN / KILL ----
+    gen = {}
+    kill = {}
 
-        if not operand:
-            continue
+    for inst in instructions:
+        i = inst["id"]
+        op = inst["opcode"]
+        var = inst.get("operand")
 
-        # Variable read
-        if opcode in ["L", "A", "AN", "O", "ON"]:
+        gen[i] = set()
+        kill[i] = set()
 
-            reaching.append({
-                "instruction": inst["id"],
-                "variable": operand,
-                "reaches_from": last_definition.get(operand)
+        if op in ["T", "=", "S", "R"] and var:
+            gen[i].add((var, i))
+
+            for d in var_defs.get(var, []):
+                if d != i:
+                    kill[i].add((var, d))
+
+    # ---- DATAFLOW ----
+    IN = {i["id"]: set() for i in instructions}
+    OUT = {i["id"]: set() for i in instructions}
+
+    changed = True
+
+    while changed:
+        changed = False
+
+        for inst in instructions:
+            i = inst["id"]
+
+            in_new = set()
+            for p in preds[i]:
+                in_new |= OUT[p]
+
+            out_new = gen[i] | (in_new - kill[i])
+
+            if in_new != IN[i] or out_new != OUT[i]:
+                IN[i] = in_new
+                OUT[i] = out_new
+                changed = True
+
+    # ---- FLATTEN RESULT ----
+    result = []
+
+    for inst in instructions:
+        i = inst["id"]
+
+        for (var, def_id) in IN[i]:
+            result.append({
+                "instruction": i,
+                "reaches_from": def_id,
+                "variable": var
             })
 
-        # Variable write
-        elif opcode in ["T", "=", "S", "R"]:
-
-            last_definition[operand] = inst["id"]
-
-    return reaching
+    return result
