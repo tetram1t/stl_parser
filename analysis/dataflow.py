@@ -1,51 +1,22 @@
 def build_use_def(instructions):
-    """
-    Build USE / DEF maps.
 
-    USE:
-        Variable is read.
-
-    DEF:
-        Variable is written.
-    """
-
-    use_map = {}
-    def_map = {}
+    use = {}
+    defs = {}
 
     for inst in instructions:
+        op = inst["opcode"]
+        var = inst.get("operand")
+        i = inst["id"]
 
-        opcode = inst["opcode"]
-        operand = inst["operand"]
+        if op in ["L", "A"]:
+            if var:
+                use.setdefault(var, []).append(i)
 
-        if not operand:
-            continue
-
-        # Read operations
-        if opcode in [
-            "A",
-            "AN",
-            "O",
-            "ON",
-            "L"
-        ]:
-            use_map.setdefault(
-                operand,
-                []
-            ).append(inst["id"])
-
-        # Write operations
-        elif opcode in [
-            "T",
-            "=",
-            "S",
-            "R"
-        ]:
-            def_map.setdefault(
-                operand,
-                []
-            ).append(inst["id"])
+        elif op in ["T", "=", "S", "R"]:
+            if var:
+                defs.setdefault(var, []).append(i)
 
     return {
-        "use": use_map,
-        "def": def_map
+        "use": use,
+        "def": defs
     }

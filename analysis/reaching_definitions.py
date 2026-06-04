@@ -1,19 +1,17 @@
 def build_reaching_definitions(instructions, cfg_edges=None):
-    """
-    Returns FLAT reaching definitions format for tests.
-    """
 
     if not instructions:
         return []
 
-    # ---- CFG predecessors ----
-    preds = {i["id"]: [] for i in instructions}
+    # ---- predecessors ----
+    preds = {inst["id"]: [] for inst in instructions}
 
     if cfg_edges:
         for e in cfg_edges:
-            dst = e.get("resolved_target_id")
-            if dst is not None:
-                preds[dst].append(e["from"])
+            frm = e.get("from_block")
+            to = e.get("to_block")
+            if frm is not None and to is not None:
+                preds[to].append(frm)
     else:
         for i in range(1, len(instructions)):
             preds[i].append(i - 1)
@@ -47,8 +45,8 @@ def build_reaching_definitions(instructions, cfg_edges=None):
                     kill[i].add((var, d))
 
     # ---- DATAFLOW ----
-    IN = {i["id"]: set() for i in instructions}
-    OUT = {i["id"]: set() for i in instructions}
+    IN = {inst["id"]: set() for inst in instructions}
+    OUT = {inst["id"]: set() for inst in instructions}
 
     changed = True
 
@@ -69,7 +67,7 @@ def build_reaching_definitions(instructions, cfg_edges=None):
                 OUT[i] = out_new
                 changed = True
 
-    # ---- FLATTEN RESULT ----
+    # ---- FLATTEN ----
     result = []
 
     for inst in instructions:

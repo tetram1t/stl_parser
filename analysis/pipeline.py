@@ -1,36 +1,37 @@
 from parser import parse_stl_mvp
+
 from analysis.basic_blocks import build_basic_blocks, build_block_cfg
 from analysis.dataflow import build_use_def
 from analysis.reaching_definitions import build_reaching_definitions
 from analysis.def_use import build_def_use
+from analysis.dependency_graph import build_dependency_graph
 
 
 def analyze(code: str):
+
     # 1. PARSE
-    parsed = parse_stl_mvp(code)
-    instructions = parsed["instructions"]
+    ir = parse_stl_mvp(code)
+    instructions = ir["instructions"]
 
     # 2. CONTROL FLOW
-    blocks = build_basic_blocks(parsed)
-    block_cfg = build_block_cfg(blocks, parsed)
+    blocks = build_basic_blocks(ir)
+    cfg = build_block_cfg(blocks, ir)
 
-    # 3. DATAFLOW (USE / DEF)
+    ir["blocks"] = blocks
+    ir["cfg"] = cfg
+
+    # 3. DATAFLOW
+
     use_def = build_use_def(instructions)
+    ir["use_def"] = use_def
 
-    # 4. DATAFLOW (REACHING DEFINITIONS)
-    reaching = build_reaching_definitions(instructions)
-    def_use = build_def_use(reaching)
+    reaching = build_reaching_definitions(instructions, cfg)
+    ir["reaching"] = reaching
 
-    # 5. RETURN SINGLE STRUCTURE
-    return {
-        "parsed": parsed,
-        "instructions": instructions,
+    def_use = build_def_use(use_def)
+    ir["def_use"] = def_use
 
-        "blocks": blocks,
-        "block_cfg": block_cfg,
+    # 4. DEPENDENCY GRAPH
+    ir["dep_graph"] = build_dependency_graph(ir)
 
-        "use_def": use_def,
-        "reaching": reaching,
-
-        "def_use": def_use
-    }
+    return ir

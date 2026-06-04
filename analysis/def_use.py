@@ -1,27 +1,17 @@
-def build_def_use(reaching):
-    """
-    Converts reaching definitions → def-use chains
-    """
+def build_def_use(use_def):
 
-    result = {}
+    result = []
 
-    for edge in reaching:
-        var = edge["variable"]
-        d = edge["reaches_from"]
-        u = edge["instruction"]
+    defs = use_def.get("def", {})
+    uses = use_def.get("use", {})
 
-        if var not in result:
-            result[var] = {
-                "defs": set(),
-                "uses": set()
-            }
-
-        result[var]["defs"].add(d)
-        result[var]["uses"].add(u)
-
-    # convert sets → lists (для стабильного вывода)
-    for var in result:
-        result[var]["defs"] = sorted(result[var]["defs"])
-        result[var]["uses"] = sorted(result[var]["uses"])
+    for var, def_list in defs.items():
+        for d in def_list:
+            for u in uses.get(var, []):
+                result.append({
+                    "var": var,
+                    "def": d,
+                    "use": u
+                })
 
     return result

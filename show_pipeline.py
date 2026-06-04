@@ -8,22 +8,27 @@ A Sensor1
 = Motor1
 """
 
-result = analyze(code)
+ir = analyze(code)
 
 print("\n=== INSTRUCTIONS ===")
-print(result["instructions"])
+print(ir["instructions"])
 
 print("\n=== BLOCKS ===")
-print(result["blocks"])
+print(ir["blocks"])
 
-print("\n=== BLOCK CFG ===")
-print(result["block_cfg"])
+print("\n=== CFG ===")
+print(ir["cfg"])
 
 print("\n=== USE/DEF ===")
-print(result["use_def"])
+print(ir["use_def"])
 
 print("\n=== REACHING ===")
-print(result["reaching"])
+print(ir["reaching"])
+
+result = analyze(code)
 
 print("\n=== DEF-USE ===")
 print(result["def_use"])
+
+print("\n=== DEP GRAPH ===")
+print(ir["dep_graph"])
