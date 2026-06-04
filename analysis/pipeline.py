@@ -2,6 +2,7 @@ from parser import parse_stl_mvp
 from analysis.basic_blocks import build_basic_blocks, build_block_cfg
 from analysis.dataflow import build_use_def
 from analysis.reaching_definitions import build_reaching_definitions
+from analysis.def_use import build_def_use
 
 
 def analyze(code: str):
@@ -17,7 +18,8 @@ def analyze(code: str):
     use_def = build_use_def(instructions)
 
     # 4. DATAFLOW (REACHING DEFINITIONS)
-    reaching = build_reaching_definitions(parsed["instructions"])
+    reaching = build_reaching_definitions(instructions)
+    def_use = build_def_use(reaching)
 
     # 5. RETURN SINGLE STRUCTURE
     return {
@@ -28,5 +30,7 @@ def analyze(code: str):
         "block_cfg": block_cfg,
 
         "use_def": use_def,
-        "reaching": reaching
+        "reaching": reaching,
+
+        "def_use": def_use
     }

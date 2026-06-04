@@ -24,3 +24,6 @@ print(result["use_def"])
 
 print("\n=== REACHING ===")
 print(result["reaching"])
+
+print("\n=== DEF-USE ===")
+print(result["def_use"])
