@@ -1,20 +1,21 @@
 def build_dependency_graph(ir):
 
     instructions = ir["instructions"]
-    cfg = ir.get("cfg", [])
+
+    instruction_cfg = ir.get("instruction_cfg", [])
     def_use = ir.get("def_use", [])
 
     edges = []
 
-    # control edges
-    for e in cfg:
+    # control dependencies (instruction level)
+    for e in instruction_cfg:
         edges.append({
-            "from": e.get("from_block"),
-            "to": e.get("to_block"),
+            "from": e["from"],
+            "to": e["to"],
             "type": "control"
         })
 
-    # data edges
+    # data dependencies
     for d in def_use:
         edges.append({
             "from": d["def"],

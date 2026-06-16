@@ -13,8 +13,8 @@ def analyze(code: str):
     # 1. PARSE
     ir = parse_stl_mvp(code)
     instructions = ir["instructions"]
-    
-    instruction_cfg = build_instruction_cfg(instructions)
+
+    instruction_cfg = build_instruction_cfg(ir)
     ir["instruction_cfg"] = instruction_cfg
 
     # 2. CONTROL FLOW

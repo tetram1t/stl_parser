@@ -2,10 +2,12 @@ from analysis.pipeline import analyze
 
 code = """
 L MW10
+JU END
+
 T MW20
 
-A Sensor1
-= Motor1
+END:
+= Q0.0
 """
 
 ir = analyze(code)
