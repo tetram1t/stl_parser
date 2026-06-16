@@ -13,6 +13,9 @@ ir = analyze(code)
 print("\n=== INSTRUCTIONS ===")
 print(ir["instructions"])
 
+print("\n=== INSTRUCTION CFG ===")
+print(ir["instruction_cfg"])
+
 print("\n=== BLOCKS ===")
 print(ir["blocks"])
 
@@ -28,7 +31,7 @@ print(ir["reaching"])
 result = analyze(code)
 
 print("\n=== DEF-USE ===")
-print(result["def_use"])
+print(result["def_use"])    
 
 print("\n=== DEP GRAPH ===")
 print(ir["dep_graph"])

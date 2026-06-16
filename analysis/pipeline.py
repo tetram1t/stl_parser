@@ -5,6 +5,7 @@ from analysis.dataflow import build_use_def
 from analysis.reaching_definitions import build_reaching_definitions
 from analysis.def_use import build_def_use
 from analysis.dependency_graph import build_dependency_graph
+from analysis.instruction_cfg import build_instruction_cfg
 
 
 def analyze(code: str):
@@ -12,6 +13,9 @@ def analyze(code: str):
     # 1. PARSE
     ir = parse_stl_mvp(code)
     instructions = ir["instructions"]
+    
+    instruction_cfg = build_instruction_cfg(instructions)
+    ir["instruction_cfg"] = instruction_cfg
 
     # 2. CONTROL FLOW
     blocks = build_basic_blocks(ir)
